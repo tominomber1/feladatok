@@ -4,21 +4,22 @@ using namespace std;
 
 int main()
 {
-    int a,b,lkkt;
-    cout<<"a=";
-    cin>>a;
-    cout<<"b=";
-    cin>>b;
-    lkkt=a*b;
-    while(a!=b){
-      if(a>b)
+    int n,aux,szamjegy,ujszam;
+    cout<<"n=";
+    cin>>n;
+    ujszam=0;
+    aux=n;
+    while(aux>0)
       {
-        a-=b;
-      }
-      else
-        b-=a;
+      szamjegy=aux%10;
+    aux=aux/10;
+    ujszam=ujszam*10+szamjegy;
     }
-    cout<<"lnko"<<a<<endl;
-    cout<<"lkkt="<<lkkt/a;
+    if(n==ujszam)
+      {
+      cout<<"a szam pallindrom";}
+    else
+    {
+      cout<<"a szam nem pallindrom";}
     return 0;
 }
