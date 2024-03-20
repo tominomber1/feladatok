@@ -4,22 +4,30 @@ using namespace std;
 
 int main()
 {
-    int n,i,szam,szorzat=1;
+    int v[100];
+    int n,i;
     cout<<"n=";
     cin>>n;
-   for(i=0;i<n;i++)
+    for(i=0;i<n;i++)
     {
-      cout<<"szam=";
-      cin>>szam;
-      for(int oszto=2;oszto<=szam/2;oszto++)
-        {
-        if(oszto%2!=0)
-          {
-          szorzat=szorzat*oszto;
-        }
-
-      }
+     cout<<"v["<<i<<"]=";
+     cin>>v[i];
     }
-    cout<<"szorzat="<<szorzat;
+    for(i=0;i<n-1;i++)
+        {
+        for(int j=i+1;j<n;j++)
+        {
+            if(v[i]>v[j])
+                {
+                int csere=v[i];
+                v[i]=v[j];
+                v[j]=csere;
+            }
+        }
+    }
+    for(i=0;i<n;i++){
+     cout<<v[i]<<" ";
+
+    }
     return 0;
 }
