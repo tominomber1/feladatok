@@ -1,20 +1,23 @@
 #include <iostream>
-#include <fstream>
 
 using namespace std;
 
 int main()
 {
-
-    ifstream in("input.txt");
-    ofstream out("output.txt");
-    int n,v[20];
-    in>>n;
-    for(int i=0;i<n;i++){
-        in>>v[i];
-        out<<v[i]<<" "<<v[i]/2<<endl;
+    int a,b,n,s;
+    cin>>a;
+    cin>>b;
+    n=a;
+    s=b;
+    while(a!=b)
+    {
+        if(a>b){
+            a=a-b;
+        }
+        else
+            b=b-a;
     }
-    out.close();
-    in.close();
+    cout<<n/a<<endl;
+    cout<<s/a;
     return 0;
 }
