@@ -4,20 +4,16 @@ using namespace std;
 
 int main()
 {
-    int a,b,n,s;
+    int a,szj,hatvany=1,b=0,szamrendszer;
     cin>>a;
-    cin>>b;
-    n=a;
-    s=b;
-    while(a!=b)
+    cin>>szamrendszer;
+    while(a>0)
     {
-        if(a>b){
-            a=a-b;
-        }
-        else
-            b=b-a;
+        szj=a%10;
+        a=a/10;
+        b=b+szj*hatvany;
+        hatvany=hatvany*2;
     }
-    cout<<n/a<<endl;
-    cout<<s/a;
+    cout<<b;
     return 0;
 }
