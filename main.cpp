@@ -1,19 +1,45 @@
 #include <iostream>
-
+#include <fstream>
 using namespace std;
 
 int main()
 {
-    int a,szj,hatvany=1,b=0,szamrendszer;
-    cin>>a;
-    cin>>szamrendszer;
-    while(a>0)
-    {
-        szj=a%10;
-        a=a/10;
-        b=b+szj*hatvany;
-        hatvany=hatvany*2;
+    int matrix[10][10],sor,oszlop,n,e,k,ny,d,S;
+    ifstream in("input.txt");
+    in>>n;
+    for(sor=0;sor<n;sor++){
+        for(oszlop=0;oszlop<n;oszlop++){
+
+            in>>matrix[sor][oszlop];
+        }
     }
-    cout<<b;
+    for(sor=0;sor<n;sor++){
+        for(oszlop=0;oszlop<n;oszlop++){
+            in>>matrix[sor][oszlop];
+
+    }
+    if(sor<oszlop){
+            {
+               if(sor+oszlop<n-1){
+                 e+=matrix[sor][oszlop];
+               }
+               if(sor+oszlop>n-1){
+                k+=matrix[sor][oszlop];
+               }
+            }
+    }
+    if(sor>oszlop){
+        if(sor+oszlop<n-1){
+            ny+=matrix[sor][oszlop];
+        }
+    if(sor+oszlop>n-1){
+        d+=matrix[sor][oszlop];
+    }
+    }
+    }
+    cout<<"E="<<e<<endl;
+    cout<<"K="<<k<<endl;
+    cout<<"NY="<<ny<<endl;
+    cout<<"D="<<d<<endl;
     return 0;
 }
