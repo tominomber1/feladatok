@@ -4,34 +4,27 @@ using namespace std;
 
 int main()
 {
-int a[10][10],n,sor,oszlop;
+int n,a[10][10],b[10][10],szorzat[10][10],sor,oszlop,S;
 ifstream in("input.txt");
 in>>n;
 for(sor=0;sor<n;sor++){
-    for(oszlop=sor+1;oszlop<n;oszlop++){
+    for(oszlop=0;oszlop<n;oszlop++){
         in>>a[sor][oszlop];
+        in>>b[sor][oszlop];
     }
 }
 for(sor=0;sor<n;sor++){
     for(oszlop=0;oszlop<n;oszlop++){
-        in>>a[sor][oszlop];
-
-if(sor==oszlop){
-    a[sor][oszlop]=1;
-}
-if(sor+oszlop==n-1){
-    a[sor][oszlop]=1;
-}
+            for(int index=0;index<n;index++){
+       szorzat[sor][oszlop]+=a[sor][index]*b[index][oszlop];
+    }
 }
 }
 for(sor=0;sor<n;sor++){
-    for(oszlop=sor+1;oszlop<n;oszlop++){
-        in>>a[sor][oszlop];
+    for(oszlop=0;oszlop<n;oszlop++){
+          cout<<szorzat[sor][oszlop]<<" ";
     }
-
-cout<<a[sor][oszlop]<<" ";
+    cout<<endl;
 }
-cout<<endl;
-in.close();
-return 0;
+    return 0;
 }
