@@ -11,7 +11,7 @@ int main()
     while(pos!=string::npos)
     {
         szo.replace(pos,1,"mpm");
-        pos=szo.find(pos+3);
+        pos=szo.find("m",pos+3);
     }
     cout<<szo;
     return 0;
