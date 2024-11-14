@@ -1,0 +1,17 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main()
+{
+    string szo;
+    cout<<"szo=";
+    cin>>szo;
+    size_t pos=szo.find("m");
+    while(pos!=string::npos)
+    {
+        szo.replace(pos,1,"mpm");
+        pos=szo.find(pos+3);
+    }
+    cout<<szo;
+    return 0;
